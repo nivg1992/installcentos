@@ -17,6 +17,8 @@ export CLOUDFLARE=${CLOUDFLARE:="false"}
 export CF_MAIL=${CF_MAIL:="example@email.com"}
 export CF_KEY=${CF_KEY:="xxxxxx"}
 export MAIL=${MAIL:="example@email.com"}
+export METRICS=${METRICS:="True"}
+export LOGGING=${LOGGING:="True"}
 
 ## Make the script interactive to set the variables
 if [ "$INTERACTIVE" = "true" ]; then
@@ -168,9 +170,6 @@ if [ ! -f ~/.ssh/id_rsa ]; then
 	cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 	ssh -o StrictHostKeyChecking=no root@$IP "pwd" < /dev/null
 fi
-
-export METRICS="True"
-export LOGGING="True"
 
 memory=$(cat /proc/meminfo | grep MemTotal | sed "s/MemTotal:[ ]*\([0-9]*\) kB/\1/")
 
