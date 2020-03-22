@@ -19,6 +19,7 @@ export CF_KEY=${CF_KEY:="xxxxxx"}
 export MAIL=${MAIL:="example@email.com"}
 export METRICS=${METRICS:="True"}
 export LOGGING=${LOGGING:="True"}
+export MONITORING=${MONITORING:="True"}
 
 ## Make the script interactive to set the variables
 if [ "$INTERACTIVE" = "true" ]; then
